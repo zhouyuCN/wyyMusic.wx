@@ -1,0 +1,270 @@
+.header {
+  height: 130rpx;
+  background-color: #d43c33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35rpx;
+}
+.header .logo img {
+  width: 53rpx;
+  height: 53rpx;
+  border-radius: 5rpx;
+}
+.header .logo span {
+  font-size: 38rpx;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 10rpx;
+}
+.header .down button {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+}
+.test {
+  width: 100%;
+}
+.test .testNav {
+  padding: 0 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+.test .testNav .testTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+}
+.test .testNav .selected {
+  color: #d43c33;
+  border-bottom: 4rpx solid #d43c33;
+}
+.test .content .recommend .title {
+  height: 106rpx;
+  display: flex;
+  align-items: center;
+}
+.test .content .recommend .title span {
+  color: #d43c33;
+  font-weight: 900;
+  font-size: 34rpx;
+  margin-right: 16rpx;
+}
+.test .content .recommend .title h2 {
+  font-weight: 700;
+  font-size: 34rpx;
+}
+.test .content .recommend .recommend-box {
+  height: 600rpx;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.test .content .recommend .recommend-box::-webkit-scrollbar {
+  display: none;
+}
+.test .content .recommend .recommend-box .item {
+  width: 245rpx;
+  height: 380rpx;
+  position: relative;
+}
+.test .content .recommend .recommend-box .item .item-img {
+  width: 245rpx;
+  height: 245rpx;
+}
+.test .content .recommend .recommend-box .item .item-img img {
+  width: 100%;
+  height: 100%;
+}
+.test .content .recommend .recommend-box .item .hits {
+  position: absolute;
+  top: 7rpx;
+  right: 7rpx;
+  font-size: 22rpx;
+  color: #fff;
+}
+.test .content .recommend .recommend-box .item p {
+  font-weight: 700;
+  font-size: 24rpx;
+  padding: 12rpx;
+  color: #333;
+}
+.test .content .recommend .new-music-box {
+  padding: 0 20rpx;
+}
+.test .content .recommend .new-music-box .new-music-item {
+  width: 100%;
+  height: 110rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.test .content .recommend .new-music-box .new-music-item .new-music-name p:first-of-type {
+  font-size: 34rpx;
+  color: #333;
+}
+.test .content .recommend .new-music-box .new-music-item .new-music-name .singer {
+  color: #999;
+  font-size: 24rpx;
+}
+.test .content .recommend .foot {
+  margin-top: 70rpx;
+  padding-top: 60rpx;
+  width: 100%;
+  height: 280rpx;
+  background: url(//s3.music.126.net/m/s/img/recommand_bg_3x.png?f3a9aaa781c3bf3b543d129327d35fce);
+}
+.test .content .recommend .foot .foot-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.test .content .recommend .foot .foot-box .logo a {
+  display: flex;
+}
+.test .content .recommend .foot .foot-box .logo a img {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 15rpx;
+  background-color: #dd001b;
+  margin-right: 24rpx;
+}
+.test .content .recommend .foot .foot-box .logo a span {
+  font-size: 58rpx;
+  font-weight: 700;
+}
+.test .content .recommend .foot .foot-box button {
+  margin-top: 30rpx;
+  border: 1px solid #d43c33;
+  color: #d43c33;
+  font-size: 30rpx;
+  text-align: center;
+  height: 76rpx;
+  width: 600rpx;
+  border-radius: 30px;
+}
+.test .content .recommend .foot .foot-box p {
+  margin-top: 16rpx;
+  font-size: 18rpx;
+  color: #ccc;
+}
+.test .content .m-hmhot {
+  width: 100%;
+  height: 294rpx;
+  background: url(//s3.music.126.net/m/s/img/hot_music_bg_3x.jpg?2bfefd3ba37eaffbd66b7d108b9de26a) no-repeat center center;
+}
+.test .content .m-hmhot .hot-top {
+  padding: 45rpx;
+  margin-bottom: 35rpx;
+}
+.test .content .m-hmhot .hot-top .hot-icon {
+  width: 290rpx;
+  height: 140rpx;
+  overflow: hidden;
+  position: relative;
+}
+.test .content .m-hmhot .hot-top .hot-icon img {
+  width: 290rpx;
+  height: 160rpx;
+  position: absolute;
+  top: -40rpx;
+  left: -20rpx;
+}
+.test .content .m-hmhot .hot-top p {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 15rpx;
+}
+.test .content .m-hmhot .hot-music-box .hot-music-item {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+}
+.test .content .m-hmhot .hot-music-box .hot-music-item .music-num {
+  height: 100%;
+  color: #d43c33;
+  font-size: 30rpx;
+  margin: 40rpx 20rpx;
+  font-weight: 700;
+}
+.test .content .m-hmhot .hot-music-box .hot-music-item .music-content {
+  padding-right: 20rpx;
+  width: 675rpx;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.test .content .m-hmhot .hot-music-box .hot-music-item .music-content p {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.test .content .m-hmhot .hot-music-box .hot-music-item .music-content .singer span {
+  color: #ccc;
+  font-size: 24rpx;
+}
+.test .content .m-hmhot .hot-music-box .look {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #bbb;
+}
+.test .content .search-box .search {
+  height: 120rpx;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test .content .search-box .search input {
+  width: 85%;
+  height: 60rpx;
+  color: #333;
+  background-color: #efefef;
+  padding-left: 65rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+.test .content .search-box .search icon {
+  position: absolute;
+  left: 45rpx;
+}
+.test .content .search-box .hot-search {
+  padding: 20rpx;
+}
+.test .content .search-box .hot-search .title {
+  height: 75rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 75rpx;
+}
+.test .content .search-box .hot-search .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.test .content .search-box .hot-search .content .item {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #999;
+  font-weight: 700;
+  padding: 20rpx 28rpx;
+  border-radius: 40rpx;
+  margin-right: 14rpx;
+  margin-top: 16rpx;
+}

@@ -1,0 +1,328 @@
+@color-main: #d43c33;
+// 头部
+.header {
+  height: 130rpx;
+  background-color: @color-main;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35rpx;
+  .logo {
+    img {
+      width: 53rpx;
+      height: 53rpx;
+      border-radius: 5rpx;
+    }
+    span {
+      font-size: 38rpx;
+      color: #fff;
+      font-weight: 700;
+      margin-left: 10rpx;
+    }
+  }
+  .down {
+    button {
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 40rpx;
+      padding: 0 30rpx;
+      font-size: 30rpx;
+    }
+  }
+}
+
+//tab
+.test {
+  width: 100%;
+  .testNav {
+    padding: 0 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+    // border-bottom: 1rpx solid #ccc;
+    .testTitle {
+      flex: 1;
+      text-align: center;
+      font-size: 30rpx;
+    }
+    .selected {
+      color: @color-main;
+      border-bottom: 4rpx solid @color-main;
+    }
+  }
+  .content {
+    // 推荐音乐
+    .recommend {
+      // 标题
+      .title {
+        height: 106rpx;
+        display: flex;
+        align-items: center;
+        span {
+          color: @color-main;
+          font-weight: 900;
+          font-size: 34rpx;
+          margin-right: 16rpx;
+        }
+        h2 {
+          font-weight: 700;
+          font-size: 34rpx;
+        }
+      }
+      // 推荐音乐
+      .recommend-box {
+        height: 600rpx;
+        overflow:auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &::-webkit-scrollbar {
+          display: none;
+      }
+        
+        .item {
+          width: 245rpx;
+          height: 380rpx;
+          position: relative;
+        
+          .item-img {
+            width: 245rpx;
+            height: 245rpx;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .hits {
+            position: absolute;
+            top: 7rpx;
+            right: 7rpx;
+            font-size: 22rpx;
+            color: #fff;
+          }
+          p {
+            font-weight: 700;
+            font-size: 24rpx;
+            padding: 12rpx;
+            color: #333;
+          }
+        }
+      }
+      // 最新音乐
+      .new-music-box {
+        // width: 100%;
+        padding: 0 20rpx;
+
+        .new-music-item {
+          width: 100%;
+          height: 110rpx;
+          box-sizing: border-box;
+          border-bottom: 1px solid #ccc;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .new-music-name {
+            p:first-of-type {
+              font-size: 34rpx;
+              color: #333;
+            }
+            .singer {
+              color: #999;
+              font-size: 24rpx;
+            }
+          }
+        }
+      }
+      // 底部
+      .foot {
+        margin-top: 70rpx;
+        padding-top: 60rpx;
+        width: 100%;
+        height: 280rpx;
+        background: url(//s3.music.126.net/m/s/img/recommand_bg_3x.png?f3a9aaa781c3bf3b543d129327d35fce);
+
+        .foot-box {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .logo {
+            a {
+              display: flex;
+              img {
+                width: 88rpx;
+                height: 88rpx;
+                border-radius: 15rpx;
+                background-color: #dd001b;
+                margin-right: 24rpx;
+              }
+              span {
+                font-size: 58rpx;
+                font-weight: 700;
+              }
+            }
+          }
+          button {
+            margin-top: 30rpx;
+            border: 1px solid @color-main;
+            color: @color-main;
+            font-size: 30rpx;
+            text-align: center;
+            height: 76rpx;
+            width: 600rpx;
+            border-radius: 30px;
+          }
+          p {
+            margin-top: 16rpx;
+            font-size: 18rpx;
+            color: #ccc;
+          }
+        }
+      }
+    }
+    // url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880) no-repeat
+    // 热歌榜
+    .m-hmhot {
+      width: 100%;
+      height: 294rpx;
+ 
+      background: url(//s3.music.126.net/m/s/img/hot_music_bg_3x.jpg?2bfefd3ba37eaffbd66b7d108b9de26a) no-repeat center center;
+      .hot-top {
+        padding: 45rpx;
+        margin-bottom: 35rpx;
+        .hot-icon {
+          width: 290rpx;
+          height: 140rpx;
+          overflow: hidden;
+          position: relative;
+          img {
+            width: 290rpx;
+            height: 160rpx;
+            position: absolute;
+            top: -40rpx;
+            left: -20rpx;
+          }
+        }
+        p{
+          font-size: 24rpx;
+          color: #fff;
+          font-weight: 700;
+          margin-left: 15rpx;
+        }
+      }
+
+    //   热歌排行
+    .hot-music-box{
+        .hot-music-item{
+            width: 100%;
+            height: 110rpx;
+            display: flex;
+            .music-num{
+                height: 100%;
+            
+                color:@color-main;
+                font-size: 30rpx;
+                margin: 40rpx 20rpx;
+                font-weight: 700;
+
+            }
+            .music-content{
+                padding-right: 20rpx;
+                width: 675rpx;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ccc;
+                p {
+                    font-size: 30rpx;
+                    font-weight: 700;
+                }
+                .singer{
+                    span {
+                        color: #ccc;
+                        font-size: 24rpx;
+                    }
+                }
+          
+            }
+        }
+        // 查看完整榜单
+        .look{
+            width: 100%;
+            height: 110rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28rpx;
+            color: #bbb;
+        }
+        
+       
+    }
+
+
+    }
+
+    // 搜索
+    .search-box{
+        // 搜索框
+        .search{
+            height: 120rpx;
+            width: 100%;
+           
+            border-bottom: 1px solid #ccc;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input{
+                width: 85%;
+                height: 60rpx;
+                color: #333;
+                background-color: #efefef;
+                padding-left: 65rpx;
+                border-radius: 30rpx;
+                font-size: 24rpx;
+                
+            }
+            icon{
+                position: absolute;
+                left:45rpx;
+    
+            }
+        }
+        // 热门搜索
+        .hot-search{
+            padding: 20rpx;
+            .title{
+                height: 75rpx;
+                font-size: 24rpx;
+                color: #999;
+                line-height: 75rpx;;
+                
+            }
+            .content{
+                display: flex;
+                flex-wrap: wrap;
+               
+                .item{
+                    border:1px solid #ccc;;
+                    box-sizing: border-box;
+                    font-size: 26rpx;
+                    color: #999;
+                    font-weight: 700;
+                    padding: 20rpx 28rpx;
+                    border-radius: 40rpx;;
+                    margin-right: 14rpx;
+                    margin-top: 16rpx
+                }
+            }
+
+        }
+        
+    }
+    
+  }
+}

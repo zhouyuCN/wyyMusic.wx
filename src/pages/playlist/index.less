@@ -1,0 +1,322 @@
+@color-main: #d43c33;
+
+.header {
+    background-color: blue;
+    width: 100%;
+
+    .song-list {
+        width: 100%;
+        height: 375rpx;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 60rpx 26rpx;
+
+        .left {
+            width: 251rpx;
+            height: 251rpx;
+            position: relative;
+
+            .icon {
+                position: absolute;
+                width: 80rpx;
+                height: 35rpx;
+                background-color: #b5292f;
+                font-size: 22rpx;
+                color: #fff;
+                text-align: center;
+                line-height: 35rpx;
+                font-weight: 700;
+                border-radius: 0 20rpx 20rpx 0;
+                top: 20rpx;
+                left: 0;
+            }
+
+            img {
+                background-color: #0f0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .right {
+            .song-name {
+                width: 410rpx;
+                height: 90rpx;
+
+                p {
+                    font-size: 36rpx;
+                    color: #fff;
+                    font-weight: 700;
+                    line-height: 40rpx;
+                }
+            }
+
+            .song-creator {
+                margin-top: 40rpx;
+                display: flex;
+
+                .creator-head {
+                    width: 60rpx;
+                    height: 60rpx;
+                    border-radius: 50%;
+                    background-color: #0f0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .creator-name {
+                    font-size: 30rpx;
+                    color: #ccc;
+                    line-height: 60rpx;
+                }
+            }
+
+        }
+    }
+
+    // 歌单描述
+    .song-describe {
+        background-color: #f8f8f8;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 30rpx;
+
+        // 标签
+        .song-label {
+            width: 100%;
+            height: 80rpx;
+            font-size: 28rpx;
+            color: #666;
+            display: flex;
+            align-self: center;
+
+            span {
+                height: 40rpx;
+                padding: 0 15rpx;
+                font-size: 24rpx;
+                line-height: 40rpx;
+                color: #666;
+                border-radius: 25rpx;
+                border: 1px solid #999;
+                // box-sizing: border-box;
+                margin-left: 15rpx;
+
+            }
+        }
+
+        // 内容
+        .abstract {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            font-size: 26rpx;
+            color: #666;
+            letter-spacing: 1.3rpx;
+        }
+
+        // 更多内容
+        .song-more {
+            height: 40rpx;
+            width: 100%;
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: #ccc;
+            }
+
+
+        }
+    }
+}
+
+// 歌曲区域
+.cont {
+    background-color: #f8f8f8;
+    margin-bottom: 20rpx;
+    width: 100%;
+
+    .title {
+        height: 45rpx;
+        background-color: #eeeff0;
+        font-size: 25rpx;
+        line-height: 45rpx;
+        color: #666;
+        padding: 0 20rpx;
+    }
+
+    // 歌曲
+    .music-list {
+        .item {
+            display: flex;
+
+            .left {
+                width: 80rpx;
+                height: 110rpx;
+                ;
+                line-height: 110rpx;
+                text-align: center;
+                font-size: 28rpx;
+                color: #999;
+            }
+
+            .right {
+                height: 110rpx;
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                padding-right: 20rpx;
+                border-bottom: 1px solid #dedede;
+
+                .music-content {
+                    padding-top: 10rpx;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    .music-name {
+                        font-size: 34rpx;
+                    }
+
+                    .music-singer {
+                        font-size: 24rpx;
+                        color: #999;
+                    }
+                }
+
+                .play {
+                    display: flex;
+                    align-self: center;
+
+                    span {
+                        font-size: 40rpx;
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 评论区域
+.bottom {
+    background-color: #f8f8f8;
+    .title {
+        height: 45rpx;
+        background-color: #eeeff0;
+        font-size: 25rpx;
+        line-height: 45rpx;
+        color: #666;
+        padding: 0 20rpx;
+    }
+
+    .splendid {
+        .top {
+            box-sizing: border-box;
+
+            padding: 18rpx 18rpx 32rpx 18rpx;
+            height: 110rpx;
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+
+            .comment-meta {
+                display: flex;
+                justify-content: center;
+                align-self: centerw;
+
+                img {
+                    width: 60rpx;
+                    height: 60rpx;
+                    background-color: red;
+                    border-radius: 50%;
+                    margin-right: 20rpx;
+                }
+
+                .comment-uset {
+                    .nickname {
+                        font-size: 28rpx;
+                        color: #666;
+                        margin-bottom: 4rpx;
+
+                    }
+
+                    .time {
+                        font-size: 20rpx;
+                        color: #999;
+                    }
+                }
+
+            }
+
+            .like {
+                .num {
+                    font-size: 24rpx;
+                    color: #999;
+                    margin-right: 10rpx;
+                }
+            }
+        }
+
+        .bottom {
+            // box-sizing: border-box;
+            // padding: 0 40rpx 26rpx 100rpx;
+            width: 615rpx;
+            padding-bottom: 26rpx;
+            padding-right: 40rpx;
+            margin-left: 100rpx;
+            border-bottom: 1px solid #dedede;
+
+            .text {
+
+                width: 635rpx;
+                font-size: 30rpx;
+                line-height: 46rpx;
+                // margin-bottom: 26rpx;
+            }
+        }
+    }
+    .look-all{
+        height: 100rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30rpx;
+        color: #999;
+        box-sizing: border-box;
+        border-bottom: 1px solid #dedede;
+        span {
+            font-size: 26rpx;
+        }
+    }
+    .collect-song{
+        width: 100%;
+        height: 110rpx;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            width: 630rpx;
+            height: 80rpx;
+            background-color: #d33a31;
+            font-size: 35rpx;
+            color: #fff;
+            line-height: 80rpx;
+            text-align: center;
+            border-radius: 40rpx;
+            font-weight: 700;
+            
+        }
+    }
+}
