@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/playlist/main"
+    "pages/playlist/main",
+    "pages/applink/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

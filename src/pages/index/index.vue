@@ -27,7 +27,7 @@
           </div>
           <!-- 音乐 -->
           <div class="recommend-box">
-            <a href="/pages/playlist/main" class="item" v-for="(item,index) in recomMusicList" :key="index">
+            <a :href="'/pages/playlist/main?id='+item.id" class="item" v-for="(item,index) in recomMusicList" :key="index">
               <div class="item-img">
                 <img :src="item.picUrl" alt>
                 <div class="hits">

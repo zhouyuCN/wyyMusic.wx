@@ -1,8 +1,21 @@
 @color-main: #d43c33;
 
 .header {
+
     background-color: blue;
     width: 100%;
+    // .bgc-img{
+    //     background-color:#333;
+    //     // opacity: .5;
+    //     position: absolute;
+    //     width: 500%;
+    //     // height: 200%;
+    //     z-index: -999;
+    //     left: -100%;
+    //     height: 1000rpx;;
+    
+
+    // }
 
     .song-list {
         width: 100%;
@@ -185,7 +198,12 @@
                     justify-content: space-around;
 
                     .music-name {
-                        font-size: 34rpx;
+                        font-size: 32rpx;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
                     }
 
                     .music-singer {
@@ -283,6 +301,17 @@
                 font-size: 30rpx;
                 line-height: 46rpx;
                 // margin-bottom: 26rpx;
+                .text-at{
+                    color: #507daf;
+                }
+                div{
+                    border: 1px solid #dfdfdf;
+                    line-height: 42rpx;
+                    box-sizing: border-box;
+                    color: #888;
+                    font-size: 26rpx;
+                    padding:20rpx 20rpx;
+                }
             }
         }
     }

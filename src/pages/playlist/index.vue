@@ -1,25 +1,26 @@
 <template>
   <div>
     <!-- 头部区域 -->
-    <div class="header">
+    <div class="header" >
+      <!-- <img class="bgc-img" :src="playList.coverImgUrl"  alt=""> -->
       <div class="song-list">
         <!-- 歌单图片 -->
         <div class="left">
           <div class="icon">歌单</div>
-          <img src alt>
+          <img :src="playList.coverImgUrl" alt>
         </div>
         <!-- 歌单信息 -->
         <div class="right">
           <!-- 歌单名 -->
           <div class="song-name">
-            <p>用一首歌,讲珍惜眼前人的故事</p>
+            <p>{{playList.name}}</p>
           </div>
           <!-- 创建者 -->
           <div class="song-creator">
             <div class="creator-head">
-              <img src alt>
+              <img :src="playList.creator.avatarUrl" alt>
             </div>
-            <span class="creator-name">虎锐</span>
+            <span class="creator-name">{{playList.creator.nickname}}</span>
           </div>
         </div>
       </div>
@@ -28,14 +29,10 @@
         <!-- 标签 -->
         <div class="song-label">
           标签:
-          <span>话语</span>
-          <span>话语</span>
-          <span>话语</span>
+          <span v-for="(item,index) in playList.tags" :key="index">{{item}}</span>
         </div>
         <!-- 歌单简介 -->
-        <div
-          class="abstract"
-        >简介：三十岁了。在屏幕上郑重的打下这几个字时，难免心生感伤，应该属于春怨范畴。傍晚宣哥说他从莲藕省驱车疾驰900多公里回到慈溪，我问他，回老本行重新搞起运输了吗。他说不是，仅仅是送家姐去趟孝感办事。莫名怀念起过去啊，和他相谈甚欢，和他通宵的聊最好来点酒微醺迷醉并喟叹知己难求。过了最好的年龄，夜谈，展望，寒暄，开始隐没在好友圈中。他浒山镇的玉米长势喜人，乡间小路走到头就有广袤无垠的海，海岸有些小灌木。</div>
+        <div class="abstract">{{playList.description}}</div>
         <!-- 等多内容 -->
         <div class="song-more">
           <span class="iconfont icon-xiajiantou"></span>
@@ -48,13 +45,13 @@
       <div class="title">歌曲列表</div>
 
       <!-- 歌曲 -->
-      <div class="music-list">
+      <div class="music-list" v-for="(item,index) in playList.tracks" :key="index">
         <div class="item">
-          <div class="left">1</div>
+          <div class="left">{{index+1}}</div>
           <div class="right">
             <div class="music-content">
-              <p class="music-name">想起</p>
-              <p class="music-singer">江美琪-想起</p>
+              <p class="music-name">{{item.name}}</p>
+              <p class="music-singer">{{item.ar[0].name}}-{{item.al.name}}</p>
             </div>
 
             <div class="play">
@@ -62,18 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="left">1</div>
-          <div class="right">
-            <div class="music-content">
-              <p class="music-name">想起</p>
-              <p class="music-singer">江美琪-想起</p>
-            </div>
-            <div class="play">
-              <span class="iconfont icon-bofang"></span>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -81,71 +67,114 @@
     <div class="bottom">
       <div class="title">精彩评论</div>
 
-      <div class="splendid">
+      <div class="splendid" v-for="(item,index) in hotComments" :key="index">
         <div class="top">
           <div class="comment-meta">
-            <img src alt>
+            <img :src="item.user.avatarUrl" alt>
             <div class="comment-uset">
-              <p class="nickname">壁纸酱neysa_</p>
-              <p class="time">10:12</p>
+              <p class="nickname">{{item.user.nickname}}</p>
+              <p class="time">{{item.time}}</p>
             </div>
           </div>
 
           <!-- 点赞 -->
           <div class="like">
-            <span class="num">95</span>
+            <span class="num">{{item.likedCount}}</span>
             <span class="iconfont icon-dianzan"></span>
           </div>
         </div>
         <div class="bottom">
           <span class="text">
-            ✔真诚建议如果两个人之间如果有不快乐的事情，见个面坦诚地去聊一聊吧。
-            我觉得见面沟通太重要了，
-            对着手机屏幕什么狠话都说得出。
-            见面就不一样了，见面会心软，会看见泪光，会得到拥抱。
-            相视而笑的时候在想，有什么好争吵的呢，不如珍惜当下好好抱一抱。
+            <span v-if="item.beReplied.length>0">回复<span class="text-at">@{{item.beReplied[0].user.nickname}}: </span></span>
+          {{item.content}}
+          <div v-if="item.beReplied.length>0">
+            @{{item.beReplied[0].user.nickname}}: {{item.beReplied[0].content}}
+          </div>
           </span>
         </div>
       </div>
 
       <div class="title">
         最新评论
-        <span>(85)</span>
+        <span>({{comments.length}})</span>
       </div>
-      <div class="splendid">
+      <div class="splendid" v-for="(item,index) in comments" :key="index">
         <div class="top">
           <div class="comment-meta">
-            <img src alt>
+            <img :src="item.user.avatarUrl" alt>
             <div class="comment-uset">
-              <p class="nickname">壁纸酱neysa_</p>
-              <p class="time">10:12</p>
+              <p class="nickname">{{item.user.nickname}}</p>
+              <p class="time">{{item.time}}</p>
             </div>
           </div>
 
           <!-- 点赞 -->
           <div class="like">
-            <span class="num">95</span>
+            <span class="num" v-if="item.likedCount!=0">{{item.likedCount}}</span>
             <span class="iconfont icon-dianzan"></span>
           </div>
         </div>
         <div class="bottom">
-          <span class="text">✔真诚建议如果两个人之间如果有不快乐的事。</span>
+          <span class="text">
+            <span v-if="item.beReplied.length>0">回复<span class="text-at">@{{item.beReplied[0].user.nickname}}: </span></span>
+          {{item.content}}
+          <div v-if="item.beReplied.length>0">
+            @{{item.beReplied[0].user.nickname}}: {{item.beReplied[0].content}}
+          </div>
+          </span>
         </div>
       </div>
 
       <!-- 查看全部 -->
-      <div class="look-all">查看全部85条评论 <span class="iconfont icon-right"></span></div>
+      <a href="/pages/applink/main" class="look-all">
+        查看全部{{total}}条评论
+        <span class="iconfont icon-right"></span>
+      </a>
 
       <!-- 收藏歌单 -->
       <div class="collect-song">
-        <button><span class="icon icon-bofang"></span> 收藏歌单</button>
+        <button>
+          <span class="icon icon-bofang"></span> 收藏歌单
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import request from "../../utils/request.js";
+export default {
+  data() {
+    return {
+        //  获取歌单歌曲列表
+      playList: [],
+      // 热门评论
+      hotComments:[],
+      // 最新评论
+      comments:[],
+      // 全部评论
+      total:[]
+    };
+  },
+  methods: {},
+  async mounted() {
+    //  获取歌单歌曲列表
+    //歌单id
+    var id = this.$root.$mp.query.id;
+    let res = await request("https://autumnfish.cn/playlist/detail?id=" + id);
+    this.playList = res.data.playlist;
+    //歌单评论
+    let res1= await request("https://autumnfish.cn/comment/playlist?id="+id)
+    console.log(res1);
+    this.hotComments=res1.data.hotComments;
+    this.comments=res1.data.comments;
+    this.total=res1.data.total;
+    console.log(this.comments);
+    
+    
+    
+  }
+};
 </script>
 
 <style scoped lang="less">

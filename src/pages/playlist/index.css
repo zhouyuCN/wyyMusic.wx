@@ -149,7 +149,12 @@
   justify-content: space-around;
 }
 .cont .music-list .item .right .music-content .music-name {
-  font-size: 34rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .cont .music-list .item .right .music-content .music-singer {
   font-size: 24rpx;
@@ -219,6 +224,17 @@
   width: 635rpx;
   font-size: 30rpx;
   line-height: 46rpx;
+}
+.bottom .splendid .bottom .text .text-at {
+  color: #507daf;
+}
+.bottom .splendid .bottom .text div {
+  border: 1px solid #dfdfdf;
+  line-height: 42rpx;
+  box-sizing: border-box;
+  color: #888;
+  font-size: 26rpx;
+  padding: 20rpx 20rpx;
 }
 .bottom .look-all {
   height: 100rpx;

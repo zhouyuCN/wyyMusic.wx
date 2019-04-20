@@ -17,4 +17,7 @@ let request = function(url,method="get",data={},header={}){
     })
 }
 
+request.get=function(url,data){
+   return request(url,'get',data,{})
+}
 export default request
